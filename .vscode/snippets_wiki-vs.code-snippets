@@ -1,0 +1,50 @@
+{
+  "Class Container": {
+    "scope": "markdown",
+    "prefix": ["cc", "class"],
+    "body": ["<cc${2|>, array>, link>, amt=>, array amt=>, array link>, link amt=>, array link amt=>|}${1:$TM_SELECTED_TEXT}</cc>$0"],
+    "description": "Contains text in a Class Container."
+  },
+  "Type Container": {
+    "scope": "markdown",
+    "prefix": ["ct", "type"],
+    "body": ["<ct${2|>, array>, amt=>, array amt=>|}${1:$TM_SELECTED_TEXT}</ct>$0"],
+    "description": "Contains text in a Type Container."
+  },
+  "Argument Container": {
+    "scope": "markdown",
+    "prefix": ["ca", "arg"],
+    "body": ["<ca${2|>, aopt>, avrg>, opt>, vrg>|}${1:$TM_SELECTED_TEXT}</ca>$0"],
+    "description": "Contains text in a Argument Container."
+  },
+  "Function Container": {
+    "scope": "markdown",
+    "prefix": ["cf", "func"],
+    "body": ["<cf>${1:$TM_SELECTED_TEXT}</cf>$0"],
+    "description": "Contains text in a Function Container."
+  },
+  "Value Container": {
+    "scope": "markdown",
+    "prefix": ["cv", "value"],
+    "body": ["<cv${2|>, array>, amt=>, array amt=>|}${1:$TM_SELECTED_TEXT}</cv>$0"],
+    "description": "Contains text in a Value Container."
+  },
+  "Array-of Marker": {
+    "scope": "markdown",
+    "prefix": ["ao", "arrof"],
+    "body": ["<arrof></arrof>"],
+    "description": "Creates an `Array of` marker."
+  },
+  "Ulinkify": {
+    "scope": "markdown",
+    "prefix": ["cul", "ulink"],
+    "body": ["<code link ulink>${1:$TM_SELECTED_TEXT}</code>"],
+    "description": "Turns a function definition into a ulinked function link."
+  }
+  // "Import Stylesheet": {
+  //   "scope": "markdown",
+  //   "prefix": ["ss", "style", "sheet"],
+  //   "body": ["<link href=\"../..${1|/,/../|}.wiki_base/vs-style.css\" rel=\"stylesheet\">$0"],
+  //   "description": "Imports the style sheet used in the VSCode wikis."
+  // }
+}

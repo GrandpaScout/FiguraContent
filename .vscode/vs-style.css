@@ -1,0 +1,81 @@
+/* This file contains the CSS used to style the VSCode versions of the library wikis. */
+
+/*/ Containers /*/
+cc {color: var(--color-prettylights-syntax-entity);}
+ct {color: var(--color-prettylights-syntax-variable);}
+ca {color: var(--color-prettylights-syntax-constant);}
+cf {color: var(--color-prettylights-syntax-comment);}
+cv {color: var(--color-prettylights-syntax-markup-list);}
+
+/*/ [Array of] Marker /*/
+:is(h1,h2,h3,h4,h5,h6) arrof::before {
+  padding: 0em 0.2em;
+  font-size: inherit;
+}
+arrof::before {
+  padding: 0.2em 0.4em;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  content: "array of";
+  color: var(--color-fg-default);
+  font-style: italic;
+}
+arrof::after {
+  content: " ";
+}
+
+/*/ Argument Modifiers /*/
+[aopt]::after {
+  content: "?";
+  color: var(--color-prettylights-syntax-keyword);
+}
+
+[avrg]::before {
+  content: "...";
+  color: var(--color-prettylights-syntax-string);
+}
+
+/*/ Type Modifiers /*/
+:is(h1,h2,h3,h4,h5,h6) [opt]::before {
+  padding: 0em 0.2em;
+  font-size: inherit;
+  align-items: center;
+}
+[opt]::before {
+  padding: 0.2em 0.4em;
+  margin-right: 0.4em;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  content: "optional";
+  color: var(--color-prettylights-syntax-keyword);
+  font-style: italic;
+}
+
+[vrg] *::before {
+  content: "...";
+  color: var(--color-prettylights-syntax-string);
+}
+
+[array] *::after {
+  content: "[]";
+  color: var(--color-fg-default);
+}
+
+[amt]::after {
+  content: " × " attr(amt);
+  color: var(--color-fg-default)
+}
+
+[link] {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-accent-fg);
+}
+
+[ulink] {
+  color: var(--color-fg-default) !important;
+}
