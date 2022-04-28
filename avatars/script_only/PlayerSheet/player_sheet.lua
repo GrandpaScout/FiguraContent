@@ -151,7 +151,7 @@ do
   local ST_mt = {__index = SheetText}
 
   ---Create a new Text object.
-  ---@param text string
+  ---@param text? string
   function SheetText:New(text)
     return setmetatable({
       text = type(text) == "string" and text or "",
@@ -857,8 +857,8 @@ do
 
   ---Create a new Player Sheet.  
   ---**START HERE**
-  ---@param noCharacter boolean
-  ---@param avatarStats boolean
+  ---@param noCharacter? boolean
+  ---@param avatarStats? boolean
   function PlayerSheet:New(noCharacter, avatarStats)
     return setmetatable({
       player = SheetPlayer:New(),

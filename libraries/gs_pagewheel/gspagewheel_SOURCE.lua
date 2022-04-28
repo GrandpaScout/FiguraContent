@@ -84,6 +84,7 @@ do
     local pg = setmetatable({leftSize = 4, rightSize = 4}, WP_mt)
     local pgd
     for i=1,8 do
+      ---@cast data -?
       pgd = data and data[i] or {}
       if type(pgd) ~= "table" then
         error("bad vararg #" .. i .. " to 'PageWheel.New' (expected table, got " .. type(pgd) .. ")", 2)
