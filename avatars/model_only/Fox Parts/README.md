@@ -13,4 +13,14 @@ FILESIZE:   ​0.40KB​
 IMAGESIZE:  ​24×24​
 ```
 
-This does this and that and has this woah.
+A simple set of Fox ears and a fox tail.
+
+&nbsp;
+> <table> <td>
+>
+> ***
+> #### [USAGE EXCEPTION](/README.md#using-my-work)
+> This avatar follows none of the usage requests and  
+> you are free to do whatever you want with this content.
+> ***
+> </td> </table>
