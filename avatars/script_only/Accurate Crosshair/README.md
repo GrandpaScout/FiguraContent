@@ -1,6 +1,6 @@
 # Accurate Crosshair
 ```yaml
-VERSION: M.m.p
+VERSION: 2.0.0
 CHARS:   12345
 LINES:   123
 ```

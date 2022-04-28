@@ -1,15 +1,15 @@
 if client.isHost() then
   local loadSecrets = true --Disable this if the REPL is slow to load.
---[[>========================================<< INFO >>========================================<[]--
-    FIGURA REPL
-    By: GrandpaScout [STEAM_1:0:55009667]
-    Version: 4.1.2
-    Compatibility: >= Figura 0.0.8
-    Description:
-      A REPL for use in Figura 0.0.8 or later.
-      Contains formatting for types, table printing, hover data, and many other useful tools.
-      Is also themeable!
---[]>======================================<< END INFO >>======================================<]]--
+  --[[>======================================<< INFO >>======================================<[]--
+      FIGURA REPL
+      By: GrandpaScout [STEAM_1:0:55009667]
+      Version: 4.1.3
+      Compatibility: >= Figura 0.0.8
+      Description:
+        A REPL for use in Figura 0.0.8 or later.
+        Contains formatting for types, table printing, hover data, and many other tools.
+        It is also themeable!
+  --[]>====================================<< END INFO >>====================================<]]--
 
   --Create a completely seperated string table.
   local string = {}
@@ -352,6 +352,7 @@ if client.isHost() then
         PointersList = function(x, detail, inHover, options)
           local xmt = getmetatable(x).__index
           local indent
+          options = options or {}
           if options.indent == false then
             indent = rtt.max_indent + 1
           else
@@ -993,17 +994,14 @@ if client.isHost() then
       end,
       other = function(x)
         return ('{"action":"show_text","value":[{"text":"%s\n","color":"%s"},{"text":"%s","color":"%s"}]}'):format(
+          ---That's a load of bull, LLS.
+          ---@diagnostic disable-next-line: undefined-field
           type(x):gsub("^.", string.upper), rto.type,
           tostring(x):gsub("\\\"", "\\%1"), rto.default
         )
       end
     }
   end
-
-  local rotbl = {
-    __metatable = false,
-    __newindex = function() error("attempt to modify read-only table") end
-  }
 
   REPL = {
     currentcommand = "",
@@ -1020,15 +1018,7 @@ if client.isHost() then
         })
       ), true)
     end,
-    ---@type {boolean: number, number: string, string: table, table: Vector, Vector: userdata, userdata: boolean}
-    testtable = setmetatable({
-      [true] = 123.456,
-      [123.456] = "\abcxyz",
-      ["qwer\ty"] = setmetatable({"hello", "world", setmetatable({"!"}, rotbl)}, rotbl),
-      [setmetatable({"foo","bar","baz",yalike="jazz?"}, rotbl)] = vectors.of{1,2,3,4,5,math.sqrt(2)},
-      [vectors.of{1,2,3,4,5,math.sqrt(2)}] = item_stack.createItem("minecraft:stick")["figura$item_stack"],
-      [item_stack.createItem("minecraft:stone")["figura$item_stack"]] = false
-    }, rotbl),
+    --Not yet...
     RegisterStringifier = function(name, stringify)
 
     end
@@ -1426,6 +1416,7 @@ if client.isHost() then
         if not str then error "Command error." end
         if #REPL.currentcommand == 0 and str:sub(1,1) == "/" then
           log(('{"text":"REPL: Ignoring Minecraft command.","color":"%s","italic":false}'):format(rtr.notice), true)
+          ---@diagnostic disable-next-line: missing-parameter
           chat.setFiguraCommandPrefix()
           chat.sendMessage(str)
           chat.setFiguraCommandPrefix("")
@@ -1436,9 +1427,11 @@ if client.isHost() then
         str = ""
       end
       if nl ~= ";" then
+        ---@diagnostic disable-next-line: missing-parameter
         chat.setFiguraCommandPrefix()
         local ccmd = REPL.currentcommand:sub(1, -2)
         REPL.currentcommand = ""
+        ---@diagnostic disable-next-line: deprecated
         local f = loadstring("return " .. ccmd)
         if type(f) == "function" then
           log(('[{"text":"INPUT:\n","color":"%s","italic":false},{"text":"return ","color":"%s"},{"text":"%s\n","color":"%s"}]'):format(
@@ -1447,6 +1440,7 @@ if client.isHost() then
             ccmd:gsub("([\\\"])", "\\%1"), rtr.user_input
           ), true)
         else
+          ---@diagnostic disable-next-line: deprecated
           f = loadstring(ccmd)
           if type(f) == "function" then
             log(('[{"text":"INPUT:\n","color":"%s","italic":false},{"text":"%s\n","color":"%s"}]'):format(
@@ -1519,7 +1513,7 @@ if client.isHost() then
   REPLINSTANCE_Biome = biome.getBiome("minecraft:plains", {})
   --[[ O[11] ]] O[REPLINSTANCE_Biome] = true
 
-  REPLINSTANCE_BlockState = block_state.createBlock("minecraft:stone")
+  REPLINSTANCE_BlockState = block_state.createBlock("minecraft:chest")
   --[[ O[12] ]] O[REPLINSTANCE_BlockState] = true
 
   REPLINSTANCE_ItemStack = item_stack.createItem("minecraft:shield")
@@ -1533,6 +1527,16 @@ if client.isHost() then
 
   REPLINSTANCE_Vector = vectors.of{1,2,3,4,5,6}
   --[[ O[16] ]] O[REPLINSTANCE_Vector] = true
+
+  ---@type {[boolean]: number, [number]: string, [string]: table, [table]: Vector, [Vector]: userdata, [userdata]: boolean}
+  REPL.testtable = {
+    [true] = 123.456,
+    [123.456] = "\abcxyz",
+    ["qwer\ty"] = {"hello", "world", {"!"}},
+    [{"foo","bar","baz",yalike="jazz?"}] = vectors.of{1,2,3,4,5,math.sqrt(2)},
+    [vectors.of{1,2,3,4,5,math.sqrt(2)}] = REPLINSTANCE_BlockState["figura$block_state"],
+    [REPLINSTANCE_ItemStack["figura$item_stack"]] = false
+  }
 
   setmetatable(REPL, REPLmt)
 
@@ -1565,6 +1569,7 @@ if client.isHost() then
     if REPLkeyIP and not REPL.keyWP then
       if REPL.bound then
         REPL.bound = false
+        ---@diagnostic disable-next-line: missing-parameter
         chat.setFiguraCommandPrefix()
         log(string.format('{"text":"REPL: Unbound from chat.","color":"%s","italic":false}', rtr.notice), true)
       else
@@ -1578,8 +1583,10 @@ if client.isHost() then
 end
 
 function ping.REPLSync(ccmd)
+  ---@diagnostic disable-next-line: deprecated
   local f = loadstring("return " .. ccmd)
   if type(f) ~= "function" then
+    ---@diagnostic disable-next-line: deprecated
     f = loadstring(ccmd)
     if type(f) ~= "function" then
       log("REPLSync Compile error:\n" .. f)

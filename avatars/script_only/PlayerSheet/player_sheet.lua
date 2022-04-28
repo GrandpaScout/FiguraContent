@@ -1,17 +1,17 @@
 ---@type PlayerSheet
 local PlayerSheet
 do
---[[>========================================<< INFO >>========================================<[]--
-    FIGURA PLAYER SHEET GENERATOR
-    By: GrandpaScout [STEAM_1:0:55009667]
-    Version: 2.0.1
-    Compatibility: >= Figura 0.0.8
-    Description:
-      A tool used to create Player Sheets.
-      This tool is meant to be used to build a player sheet which is then imported as text into
-      another avatar as this tool can take up to 10,000 instructions to create the sheet while
-      importing it as text only takes around around 5 instructions.
---[]>======================================<< END INFO >>======================================<]]--
+  --[[>======================================<< INFO >>======================================<[]--
+      FIGURA PLAYER SHEET GENERATOR
+      By: GrandpaScout [STEAM_1:0:55009667]
+      Version: 2.0.1
+      Compatibility: >= Figura 0.0.8
+      Description:
+        A tool used to create Player Sheets.
+        This tool is meant to be used to build a player sheet which is then imported as text
+        into another avatar as this tool can take up to 10,000 instructions to create the
+        sheet while importing it as text only takes around around 5 instructions.
+  --[]>====================================<< END INFO >>====================================<]]--
 
   local PSLang = {
     title = "Player Sheet",

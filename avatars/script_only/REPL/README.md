@@ -1,6 +1,6 @@
 # Figura REPL
 ```yaml
-VERSION: M.m.p
+VERSION: 4.1.3
 CHARS:   12345
 LINES:   123
 ```
