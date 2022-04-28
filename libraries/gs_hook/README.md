@@ -3,20 +3,23 @@
 Adds Garry's Mod-style hooks to Figura.
 
 ```yaml
-- - SOURCE - -
-VERSION: 0.1.0
-CHARS:   4023
-LINES:   94
+## SOURCE
+VERSION:  ​0.1.0​
+FILESIZE: ​4.03KB​
+CHARS:    ​4023​
+LINES:    ​94​
 
-- COMPRESSED -
-VERSION: 0.1.0
-CHARS:   1522
-LINES:   21
+## COMPRESSED
+VERSION:  ​0.1.0​
+FILESIZE: ​1.63KB​
+CHARS:    ​1522​
+LINES:    ​21​
 
--  - LINE -  -
-VERSION: 0.1.0
-CHARS:   1441
-LINES:   2
+## LINE
+VERSION:  ​0.1.0​
+FILESIZE: ​1.55KB​
+CHARS:    ​1441​
+LINES:    ​2​
 ```
 
 ## Use

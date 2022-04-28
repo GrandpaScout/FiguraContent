@@ -3,20 +3,23 @@
 Adds a system to allow creation of an action wheel with pages that can be swapped out at any time.
 
 ```yaml
-- - SOURCE - -
-VERSION: 0.1.0
-CHARS:   20965
-LINES:   529
+## SOURCE
+VERSION:  ​0.1.0​
+FILESIZE: ​20.62KB​
+CHARS:    ​20965​
+LINES:    ​529​
 
-- COMPRESSED -
-VERSION: 0.1.0
-CHARS:   10432
-LINES:   147
+## COMPRESSED
+VERSION:  ​0.1.0​
+FILESIZE: ​10.29KB​
+CHARS:    ​10432​
+LINES:    ​147​
 
--  - LINE -  -
-VERSION: 0.1.0
-CHARS:   9537
-LINES:   2
+## LINE
+VERSION:  ​0.1.0​
+FILESIZE: ​9.41KB​
+CHARS:    ​9537​
+LINES:    ​2​
 ```
 
 ## Use

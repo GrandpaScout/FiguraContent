@@ -3,20 +3,23 @@
 Adds a layered bone system to Figura.
 
 ```yaml
-- - SOURCE - -
-VERSION: 0.1.0
-CHARS:   8405
-LINES:   224
+## SOURCE
+VERSION:  ​0.1.0​
+FILESIZE: ​8.31KB​
+CHARS:    ​8405​
+LINES:    ​224​
 
-- COMPRESSED -
-VERSION: 0.1.0
-CHARS:   3891
-LINES:   78
+## COMPRESSED
+VERSION:  ​0.1.0​
+FILESIZE: ​3.90KB​
+CHARS:    ​3891​
+LINES:    ​78​
 
--  - LINE -  -
-VERSION: 0.1.0
-CHARS:   3444
-LINES:   2
+## LINE
+VERSION:  ​0.1.0​
+FILESIZE: ​3.46KB​
+CHARS:    ​3444​
+LINES:    ​2​
 ```
 
 ## Use

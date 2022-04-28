@@ -1,0 +1,234 @@
+{
+	"meta": {
+		"format_version": "4.0",
+		"creation_time": 1651127362,
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "player_model",
+	"geometry_name": "Fox Parts (GrandpaScout [STEAM_1:0:55009667])",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"resolution": {
+		"width": 24,
+		"height": 24
+	},
+	"elements": [
+		{
+			"name": "Small",
+			"rescale": false,
+			"locked": false,
+			"from": [-1.5, 11.5, 2],
+			"to": [1.5, 14.5, 5],
+			"autouv": 0,
+			"color": 4,
+			"origin": [0, 13, 2],
+			"uv_offset": [0, 8],
+			"faces": {
+				"north": {
+					"uv": [6, 4, 9, 7],
+					"texture": 0
+				},
+				"east": {
+					"uv": [6, 7, 9, 10],
+					"rotation": 270,
+					"texture": 0
+				},
+				"south": {
+					"uv": [3, 4, 6, 7],
+					"texture": 0
+				},
+				"west": {
+					"uv": [0, 7, 3, 10],
+					"texture": 0
+				},
+				"up": {
+					"uv": [9, 7, 12, 10],
+					"texture": 0
+				},
+				"down": {
+					"uv": [3, 10, 6, 7],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "3aea622b-0648-216a-c203-03f549e36c2b"
+		},
+		{
+			"name": "Big",
+			"rescale": false,
+			"locked": false,
+			"from": [-2, 11, 5],
+			"to": [2, 15, 13],
+			"autouv": 0,
+			"color": 5,
+			"origin": [0, 13, 4],
+			"faces": {
+				"north": {
+					"uv": [4, 12, 8, 16],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 16, 4, 24],
+					"rotation": 90,
+					"texture": 0
+				},
+				"south": {
+					"uv": [8, 12, 12, 16],
+					"texture": 0
+				},
+				"west": {
+					"uv": [12, 24, 8, 16],
+					"rotation": 90,
+					"texture": 0
+				},
+				"up": {
+					"uv": [12, 16, 16, 24],
+					"texture": 0
+				},
+				"down": {
+					"uv": [8, 24, 4, 16],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "afef1ee3-a8da-823c-2bf3-03da32cefc8b"
+		},
+		{
+			"name": "REar",
+			"rescale": false,
+			"locked": false,
+			"from": [2, 32, -1],
+			"to": [4, 34, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [3, 32, -0.5],
+			"uv_offset": [0, 2],
+			"faces": {
+				"north": {
+					"uv": [1, 1, 3, 3],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 1, 1, 3],
+					"texture": 0
+				},
+				"south": {
+					"uv": [4, 1, 6, 3],
+					"texture": 0
+				},
+				"west": {
+					"uv": [3, 1, 4, 3],
+					"texture": 0
+				},
+				"up": {
+					"uv": [3, 1, 1, 0],
+					"texture": 0
+				},
+				"down": {
+					"uv": [5, 0, 3, 1],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "b5d3ea96-9197-1518-9cb1-6c729c19edcf"
+		},
+		{
+			"name": "LEar",
+			"rescale": false,
+			"locked": false,
+			"from": [-4, 32, -1],
+			"to": [-2, 34, 0],
+			"autouv": 0,
+			"color": 6,
+			"origin": [-3, 32, -0.5],
+			"uv_offset": [0, 2],
+			"faces": {
+				"north": {
+					"uv": [8, 1, 10, 3],
+					"texture": 0
+				},
+				"east": {
+					"uv": [7, 1, 8, 3],
+					"texture": 0
+				},
+				"south": {
+					"uv": [11, 1, 13, 3],
+					"texture": 0
+				},
+				"west": {
+					"uv": [10, 1, 11, 3],
+					"texture": 0
+				},
+				"up": {
+					"uv": [10, 1, 8, 0],
+					"texture": 0
+				},
+				"down": {
+					"uv": [12, 0, 10, 1],
+					"texture": 0
+				}
+			},
+			"type": "cube",
+			"uuid": "1ef99ae7-0bcc-f408-c717-9b33dac75026"
+		}
+	],
+	"outliner": [
+		{
+			"name": "Head",
+			"origin": [0, 24, 0],
+			"color": 0,
+			"uuid": "ff794389-b4f9-ff3d-a556-b858ff3b8633",
+			"export": true,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": ["b5d3ea96-9197-1518-9cb1-6c729c19edcf", "1ef99ae7-0bcc-f408-c717-9b33dac75026"]
+		},
+		{
+			"name": "Body",
+			"origin": [0, 24, 0],
+			"color": 0,
+			"uuid": "aa898558-78d3-4e42-ad92-773a6e13b17e",
+			"export": true,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				{
+					"name": "Tail",
+					"origin": [0, 13, 2],
+					"color": 0,
+					"uuid": "77b40ec9-2e1b-7172-165e-cd9883ace060",
+					"export": true,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"children": ["3aea622b-0648-216a-c203-03f549e36c2b", "afef1ee3-a8da-823c-2bf3-03da32cefc8b"]
+				}
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "D:\\Repositories\\FiguraContent\\avatars\\model_only\\Fox Parts\\texture.png",
+			"name": "texture.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "1",
+			"particle": false,
+			"render_mode": "normal",
+			"visible": true,
+			"mode": "bitmap",
+			"saved": true,
+			"uuid": "a8fb692e-c315-4bdb-e964-7b120b596fcf",
+			"relative_path": "../texture.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWNJREFUSEtjZGBgYGBj4fsPomHg159PjDA2PjlkPbjYjCADPn94BpbnFZBCsQSfHDGGg9QwbghU+u+5+BLD7tn9DH8OzYfrC1h/DyzHYpfI4JpayLA9Vg9FjmgLiFVIrjp4WIMMOJOpAI+LJy+YyHIxukOGgQW4ggXkVRmJf2AfiwkzMrAKKzA8vXWfwWT6AxRfE4obRmItABn06u1/6lkAcz3IYGk1RYbfbx+AfSFZuJ80HxDyIqXyJLmGHMswLECOE5CBut1XUMxl5+EhyVFEWXDn0GoGFbtQsEVUt4DTtx5uOMgiba9E6voAZAEyINkCfPkA2WDkZEtKxsOb0fBZQGzGQ7EApAm5FIVZgOx6UjMeyRbAggeUs0FAruU+3kinvQU/v3z5f7lUB5yhQDQo1dy/+YRBUV0GTEvcmguXg2U6WL4gJtkygixAjkyQJnQAy2TYigpCGQ/FAmyGgwylxAIAhyPIGWCV4GUAAAAASUVORK5CYII="
+		}
+	]
+}

@@ -3,20 +3,23 @@
 Adds simple timers that count down when you want them to.
 
 ```yaml
-- - SOURCE - -
-VERSION: 0.1.0
-CHARS:   3846
-LINES:   111
+## SOURCE
+VERSION:  ​0.1.0​
+FILESIZE: ​3.85KB​
+CHARS:    ​3846​
+LINES:    ​111​
 
-- COMPRESSED -
-VERSION: 0.1.0
-CHARS:   1474
-LINES:   26
+## COMPRESSED
+VERSION:  ​0.1.0​
+FILESIZE: ​1.54KB​
+CHARS:    ​1474​
+LINES:    ​26​
 
--  - LINE -  -
-VERSION: 0.1.0
-CHARS:   1372
-LINES:   2
+## LINE
+VERSION:  ​0.1.0​
+FILESIZE: ​1.44KB​
+CHARS:    ​1372​
+LINES:    ​2​
 ```
 
 ## Use
