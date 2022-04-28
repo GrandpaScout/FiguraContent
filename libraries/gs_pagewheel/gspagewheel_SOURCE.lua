@@ -367,7 +367,7 @@ do
 
   ---Inserts a ping function into this slot.
   ---@param name string
-  ---@param value? PingSupported
+  ---@param value? boolean|string|number|table|Vector
   function WheelPageSlot:MakePingButton(name, value)
     self.data.Function = value == nil and ping[name] or function() ping[name](value) end
   end

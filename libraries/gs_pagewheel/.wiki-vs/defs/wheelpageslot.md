@@ -185,7 +185,7 @@
 &nbsp;
 ## `<WheelPageSlot>:MakeToggle()`
 <pre>
-<cf><<cc>WheelPageSlot</cc>>:MakeToggle</cf>(<ca>group</ca>:&nbsp;<ct>string</ct>, <ca>page</ca>:&nbsp;<ct>string</ct>|<ct>number</ct>, <ca>slotoff</ca>:&nbsp;<cc>SlotNumber</cc>, <ca>sloton</ca>:&nbsp;<cc>SlotNumber</cc>,<ca aopt>func</ca>:&nbsp;<ct>string</ct>|<cc>ToggleFunction</cc>, <ca aopt>startEnabled</ca>:&nbsp;<ct>boolean</ct>)
+<cf><<cc>WheelPageSlot</cc>>:MakeToggle</cf>(<ca>group</ca>:&nbsp;<ct>string</ct>, <ca>page</ca>:&nbsp;<ct>string</ct>|<ct>number</ct>, <ca>slotoff</ca>:&nbsp;<cc>SlotNumber</cc>, <ca>sloton</ca>:&nbsp;<cc>SlotNumber</cc>, <ca aopt>func</ca>:&nbsp;<ct>string</ct>|<cc>ToggleFunction</cc>, <ca aopt>startEnabled</ca>:&nbsp;<ct>boolean</ct>)
   ► <ct>void</ct>
 </pre>
 > ## Parameters:

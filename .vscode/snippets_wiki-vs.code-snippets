@@ -41,10 +41,4 @@
     "body": ["<code link ulink>${1:$TM_SELECTED_TEXT}</code>"],
     "description": "Turns a function definition into a ulinked function link."
   }
-  // "Import Stylesheet": {
-  //   "scope": "markdown",
-  //   "prefix": ["ss", "style", "sheet"],
-  //   "body": ["<link href=\"../..${1|/,/../|}.wiki_base/vs-style.css\" rel=\"stylesheet\">$0"],
-  //   "description": "Imports the style sheet used in the VSCode wikis."
-  // }
 }
