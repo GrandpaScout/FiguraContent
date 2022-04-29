@@ -1,0 +1,178 @@
+{
+	"meta": {
+		"format_version": "4.0",
+		"creation_time": 1651200344,
+		"model_format": "free",
+		"box_uv": false
+	},
+	"name": "player_model",
+	"geometry_name": "Health Bar (GrandpaScout [STEAM_1:0:55009667])",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"resolution": {
+		"width": 2,
+		"height": 1
+	},
+	"elements": [
+		{
+			"name": "back",
+			"rescale": false,
+			"locked": false,
+			"from": [-12, 1, 0],
+			"to": [12, 4, 0],
+			"autouv": 0,
+			"color": 7,
+			"origin": [12, 2.5, 0],
+			"faces": {
+				"north": {
+					"uv": [0, 0, 1, 1],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"south": {
+					"uv": [0, 0, 1, 1],
+					"texture": null
+				},
+				"west": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "16e776be-305b-1b94-efef-c8d15f747a18"
+		},
+		{
+			"name": "flash",
+			"rescale": false,
+			"locked": false,
+			"from": [-11.9375, 1.0625, -0.0025],
+			"to": [11.9375, 3.9375, -0.0025],
+			"autouv": 0,
+			"color": 7,
+			"origin": [12, 2.5, 0],
+			"faces": {
+				"north": {
+					"uv": [1, 0, 2, 1],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"south": {
+					"uv": [0, 0, 1, 1],
+					"texture": null
+				},
+				"west": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "16ac56a2-d4d9-7d53-f929-a4a5d978dcdc"
+		},
+		{
+			"name": "color",
+			"rescale": false,
+			"locked": false,
+			"from": [-12, 1, -0.005],
+			"to": [12, 4, -0.005],
+			"autouv": 0,
+			"color": 7,
+			"origin": [12, 2.5, 0],
+			"faces": {
+				"north": {
+					"uv": [1, 0, 2, 1],
+					"texture": 0
+				},
+				"east": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"south": {
+					"uv": [0, 0, 1, 1],
+					"texture": null
+				},
+				"west": {
+					"uv": [0, 0, 0, 1],
+					"texture": null
+				},
+				"up": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				},
+				"down": {
+					"uv": [0, 0, 1, 0],
+					"texture": null
+				}
+			},
+			"type": "cube",
+			"uuid": "848f4438-4bb7-8f3f-0bfd-d8048bb94e90"
+		}
+	],
+	"outliner": [
+		{
+			"name": "health_bar",
+			"origin": [0, 2.5, 0],
+			"color": 0,
+			"uuid": "7fb230aa-4634-de47-b01b-ab31ab1e15c7",
+			"export": true,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"children": [
+				{
+					"name": "health_bar_pivot",
+					"origin": [0, 2.5, 0],
+					"color": 0,
+					"uuid": "5e35ecb5-1e28-a7c9-899d-780251a71e2f",
+					"export": true,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"children": ["16e776be-305b-1b94-efef-c8d15f747a18", "16ac56a2-d4d9-7d53-f929-a4a5d978dcdc", "848f4438-4bb7-8f3f-0bfd-d8048bb94e90"]
+				}
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "D:\\Repositories\\FiguraContent\\avatars\\parts\\Health Bar\\texture_emission.png",
+			"name": "texture_emission.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "2",
+			"particle": false,
+			"render_mode": "normal",
+			"visible": true,
+			"mode": "bitmap",
+			"saved": true,
+			"uuid": "5b26a1b5-49f2-ce05-88fe-83fa843e05a2",
+			"relative_path": "../texture_emission.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAYAAAD0In+KAAAAAXNSR0IArs4c6QAAABFJREFUGFdjlJKS/v/06RMGAA9AA/5aZyKJAAAAAElFTkSuQmCC"
+		}
+	]
+}

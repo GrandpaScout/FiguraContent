@@ -11,6 +11,12 @@ COMPLEXITY: ​96​
 ## TEXTURE
 FILESIZE:   ​0.40KB​
 IMAGESIZE:  ​24×24​
+
+## SCRIPT
+ <NONE>
+
+## SOUNDS
+ <NONE>
 ```
 
 A simple set of Fox ears and a fox tail.
