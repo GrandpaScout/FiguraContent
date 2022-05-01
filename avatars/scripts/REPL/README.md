@@ -1,9 +1,10 @@
 # Figura REPL
 ```yaml
-VERSION:  ​4.1.3​
-FILESIZE: ​64.82KB​
-CHARS:    ​66246​
-LINES:    ​1601​
+VERSION:   ​4.1.4​
+FILESIZE:  ​64.82KB​
+CACHESIZE: ​16.38KB​
+CHARS:     ​66246​
+LINES:     ​1601​
 ```
 
 Adds an interactive and extensive REPL to Figura.  

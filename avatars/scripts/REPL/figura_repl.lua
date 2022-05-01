@@ -3,7 +3,7 @@ if client.isHost() then
   --[[>======================================<< INFO >>======================================<[]--
       FIGURA REPL
       By: GrandpaScout [STEAM_1:0:55009667]
-      Version: 4.1.3
+      Version: 4.1.4
       Compatibility: >= Figura 0.0.8
       Description:
         A REPL for use in Figura 0.0.8 or later.
@@ -19,32 +19,20 @@ if client.isHost() then
 
   local function checkSMT()
     return pcall(function()
-      ---@diagnostic disable: unused-local
-      local str = "%s"
-      local str2 = "I"
-      local a, b
-      a = str:byte(1,3)
-      a = str:find("h", 1, true)
-      a = str:format("hello")
+      ---@diagnostic disable: unused-local, discard-returns, empty-block
+      local str, str2 = "%s", "I"
+      str:byte(1,3) str:find("h", 1, true) str:format("hello")
+      str:gsub("h", "i", 2) str:len() str:lower() str:match("h", 2)
+      str:rep(5, "//") str:reverse() str:sub(1, 4) str:upper()
       for _ in str:gmatch("h") do end
-      a = str:gsub("h", "i", 2)
-      a = str:len()
-      a = str:lower()
-      a = str:match("h", 2)
-      a = str:rep(5, "//")
-      a = str:reverse()
-      a = str:sub(1, 4)
-      a = str:upper()
-      ---@diagnostic enable: unused-local
+      ---@diagnostic enable: unused-local, discard-returns, empty-block
     end)
   end
   --The REPL *requires* a functional string metatable.
   --This will replace a missing one with a substitute.
   if not checkSMT() then
     local t = {}
-    for k,f in pairs(string) do
-      t[k] = f
-    end
+    for k,f in pairs(string) do t[k] = f end
     getmetatable("").__index = t
   end
 
@@ -561,7 +549,10 @@ if client.isHost() then
           for _ in pairs(x) do --Iterate the table for *every* key to get the real size.
             xlen = xlen + 1
           end
-          if xlen == 0 then xlen = tonumber(#x) or 0 end --If a table cannot be iterated, try getting the length. If that fails, use 0.
+          if xlen == 0 then --If a table cannot be iterated, try getting the length. If that fails, use 0.
+            local s, r = pcall(function() return #x end)
+            xlen = s and tonumber(r) or 0
+          end
         end
         local str = (',[{"text":"%s","color":"%s"%s}'):format(
           tostring(x), rtt.default,
@@ -575,7 +566,7 @@ if client.isHost() then
             xlen, xlen ~= 1 and "es" or "", rtt.indexes
           )
         end
-        if contents and not next(x) then
+        if contents and next(x) == nil then
           str = str .. (',{"text":"%s}","color":"%s"}'):format(
             detail and " " or "",
             rtt.bracket
@@ -612,11 +603,11 @@ if client.isHost() then
               rtt.equals,
               JSON.stringify.any(v, true, inHover, {
                 indent = ((not DONE[v] and not noindent) and (indent + 1) or false),
-                length = rts.value_size,
+                length = type(v) == "string" and rts.value_size or rtt.max_length,
                 DONE = DONE
               })
             )
-            if length and (i >= length) and ((#keys - i) ~= 0) then --If the line limit is hit, stop the table early.
+            if length and (i >= length) and (#keys > i) then --If the line limit is hit, stop the table early.
               if inHover then
                 strs[#strs+1] = (',{"text":"\n%s  · · ·  (%d more)","color":"%s"}'):format(
                   ("  "):rep(indent), #keys - i, rtt.line_limit
@@ -1032,7 +1023,7 @@ if client.isHost() then
           t[k] = f
         end
         getmetatable("").__index = t
-        log("Set string metatable index to " .. tostring(string))
+        log("Set string metatable index to " .. tostring(t))
       end,
       desc = "Repairs the string metatable.",
       help = "Repairs the string metatable.\n" ..
@@ -1595,7 +1586,7 @@ function ping.REPLSync(ccmd)
   end
   local r = {pcall(f)}
   if not r[1] then
-    log("REPLSync Runtime Error")
+    log("REPLSync Runtime Error:\n" .. r[2])
     return
   end
 end
