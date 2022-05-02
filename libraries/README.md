@@ -39,7 +39,7 @@ If a library requires one of *my* libraries, place my library above that library
 
 You are allowed to put an entire library in a completed avatar or script. You are *not* however allowed to put an entire library in your library. See the [How To Use (Library Creator)](#how-to-use-library-creator) section below.
 
-If you upload your avatar or script to the Blancworks server, make sure to credit me in the avatar or script's showcase post.
+If you upload your avatar or script to the Figura mod's Discord server make sure to credit me in the avatar's or script's showcase post.
 
 All libraries have a small credit attached to the top to allow you to paste them in and still properly credit me in-script.
 

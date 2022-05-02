@@ -1218,7 +1218,7 @@ if client.isHost() then
       If you ruin the fun and cheat to view these then I will be disappointed in you :(
 
       If you *really* want a hint to one of them, mention GrandpaScout with the message
-      "I need a REPL moment." in Blancworks' general chat.
+      "I need a REPL moment." in the general chat of whatever Discord server is hosting Figura.
       You will get a reply as soon as the message is recieved. The reply will have a warning and
       will be spoilered to avoid spoiling it for others.
     ]]--
