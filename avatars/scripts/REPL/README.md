@@ -4,7 +4,7 @@ VERSION:   ​4.1.6​
 FILESIZE:  ​64.82KB​
 CACHESIZE: ​16.39KB​
 CHARS:     ​66248​
-LINES:     ​1592
+LINES:     ​1592​
 ```
 
 Adds an interactive and extensive REPL to Figura.  
