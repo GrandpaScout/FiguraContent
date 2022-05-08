@@ -3,7 +3,7 @@ if client.isHost() then
   --[[>======================================<< INFO >>======================================<[]--
       FIGURA REPL
       By: GrandpaScout [STEAM_1:0:55009667]
-      Version: 4.1.5
+      Version: 4.1.6
       Compatibility: >= Figura 0.0.8
       Description:
         A REPL for use in Figura 0.0.8 or later.
@@ -456,10 +456,13 @@ if client.isHost() then
             insert, JSON.hoverData.number(x)
           ) or ""
         )
-        if detail and math.floor(x) == x and x-1 ~= x then
-          str = str .. (',{"text":" (%s%X)","color":"%s"}'):format(
-            rtn.hex_prefix, x, rtn.hex
-          )
+        if detail then
+          local ax = math.abs(x)
+          if math.floor(x) == x and ax <= 0x7FFFFFFFFFFFFFFF then
+            str = str .. (',{"text":" (%s%s%X)","color":"%s"}'):format(
+              (x < 0 and "-" or ""), rtn.hex_prefix, ax, rtn.hex
+            )
+          end
         end
         return str .. "]"
       end,
