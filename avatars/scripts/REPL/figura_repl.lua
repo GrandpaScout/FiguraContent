@@ -3,7 +3,7 @@ if client.isHost() then
   --[[>======================================<< INFO >>======================================<[]--
       FIGURA REPL
       By: GrandpaScout [STEAM_1:0:55009667]
-      Version: 4.1.4
+      Version: 4.1.5
       Compatibility: >= Figura 0.0.8
       Description:
         A REPL for use in Figura 0.0.8 or later.
@@ -141,7 +141,7 @@ if client.isHost() then
   local replcatmt = {
     __metatable = false,
     __newindex = function(self, key, value)
-      if self[key] == nil then error("cannot change non-existent Theme Setting") end
+      assert(self[key] ~= nil, "cannot change non-existent Theme Setting")
       if type(value) == "string" then
         rawset(self, key, value:gsub("([\\\"])", "\\%1"))
       else
@@ -1407,7 +1407,6 @@ if client.isHost() then
         if not str then error "Command error." end
         if #REPL.currentcommand == 0 and str:sub(1,1) == "/" then
           log(('{"text":"REPL: Ignoring Minecraft command.","color":"%s","italic":false}'):format(rtr.notice), true)
-          ---@diagnostic disable-next-line: missing-parameter
           chat.setFiguraCommandPrefix()
           chat.sendMessage(str)
           chat.setFiguraCommandPrefix("")
@@ -1418,7 +1417,6 @@ if client.isHost() then
         str = ""
       end
       if nl ~= ";" then
-        ---@diagnostic disable-next-line: missing-parameter
         chat.setFiguraCommandPrefix()
         local ccmd = REPL.currentcommand:sub(1, -2)
         REPL.currentcommand = ""
@@ -1560,7 +1558,6 @@ if client.isHost() then
     if REPLkeyIP and not REPL.keyWP then
       if REPL.bound then
         REPL.bound = false
-        ---@diagnostic disable-next-line: missing-parameter
         chat.setFiguraCommandPrefix()
         log(string.format('{"text":"REPL: Unbound from chat.","color":"%s","italic":false}', rtr.notice), true)
       else

@@ -2,7 +2,7 @@ if client.isHost() then
   --[[>======================================<< INFO >>======================================<[]--
       FIGURA REPL MINI
       By: GrandpaScout [STEAM_1:0:55009667]
-      Version: 1.0.0
+      Version: 1.0.1
       Compatibility: >= Figura 0.0.8
       Description:
         A minified version of the main REPL script.
@@ -214,14 +214,12 @@ if client.isHost() then
         cmd = tostring(cmd)
         if cmd:sub(1,1) == "/" then
           log("§fREPL: Ignoring Minecraft command.", false)
-          ---@diagnostic disable-next-line: missing-parameter
           chat.setFiguraCommandPrefix(); chat.sendMessage(cmd); chat.setFiguraCommandPrefix("")
           return
         end
       else
         cmd = ""
       end
-      ---@diagnostic disable-next-line: missing-parameter
       chat.setFiguraCommandPrefix()
       ---@diagnostic disable-next-line: deprecated
       local f = loadstring("return " .. cmd)
@@ -264,7 +262,7 @@ if client.isHost() then
 
   function mtof(x) return getmetatable(x) end
   function keysof(x)
-    if type(x) ~= "table" then error("bad argument to 'keysof' (table expected, got " .. type(x) .. ")") end
+    assert(type(x) == "table", "bad argument to 'keysof' (table expected, got " .. type(x) .. ")")
     local keys = {}; for k in pairs(x) do keys[#keys+1] = k end; table.sort(keys, tblsort)
     return keys
   end
@@ -277,13 +275,16 @@ if client.isHost() then
   }
   function sizeof(x) local t = type(x) --[[@type string]]; local f = sizefunc[t]; return type(f) == "function" and f(x) or f end
   function colorof(x)
-    if type(x) ~= "vector" then error("bad argument to 'colorof' (vector expected, got " .. type(x) .. ")") end
+    assert(type(x) == "vector", "bad argument to 'colorof' (vector expected, got " .. type(x) .. ")")
     local hex = ("%06X"):format(vectors.rgbToINT(x))
     if x.x > 1 or x.x < 0 or x.y > 1 or x.y < 0 or x.z > 1 or x.z < 0 then return false end
     log('{"text":"Lorem_Ipsum █ ⏹⏺◆","color":"#' .. hex .. '","italic":false}', true)
     return {tonumber(hex:sub(1,2),16), tonumber(hex:sub(3,4),16), tonumber(hex:sub(5,6),16)}
   end
-  function sync(x) if #x > 0 then ping.REPLSync(x) end end
+  function sync(x)
+    assert(type(x) == "string", "cannot load non-string as lua function")
+    if #x > 0 then ping.REPLSync(x) end
+  end
 
   REPL.testtable = {
     [true] = 123.456, [123.456] = "\abcxyz", ["qwer\ty"] = {"hello", "world", {"!"}},
@@ -303,7 +304,6 @@ if client.isHost() then
 
         if not checkSMT() then
           log("\n§4The string metatable has been tampered with!\nCore REPL functions cannot run without a valid string metatable!\nRestart the REPL to attempt to fix this.\n\n§6The REPL has automatically closed due to this error.", false)
-          ---@diagnostic disable-next-line: missing-parameter
           chat.setFiguraCommandPrefix(); REPL.bound = false; return
         end
         chat.setFiguraCommandPrefix("")
@@ -314,7 +314,6 @@ if client.isHost() then
   function tick()
     local REPLkeyIP = REPL.key.isPressed()
     if REPLkeyIP and not REPL.keyWP then
-      ---@diagnostic disable-next-line: missing-parameter
       if REPL.bound then REPL.bound = false; chat.setFiguraCommandPrefix(); log("§fREPL: Unbound from chat.", false)
       else
         REPL.bound = true; chat.setFiguraCommandPrefix(""); log("§fREPL: Bound to chat.", false)
@@ -323,7 +322,6 @@ if client.isHost() then
           local t = {}; for k,f in pairs(string) do t[k] = f end; getmetatable("").__index = t
           if not checkSMT() then
             log("§4\nThe string metatable cannot be repaired. Reload your avatar.\nIf you continue to have issues, restart your game.\n\n§6The REPL will not open until the error is fixed.")
-            ---@diagnostic disable-next-line: missing-parameter
             REPL.bound = false; chat.setFiguraCommandPrefix()
           end
         end

@@ -10,6 +10,9 @@ Contains the avatars and scripts that I have made.
 ## Libraries (`libraries`)
 Contains the generic libraries that I have made.
 
+## Tools (`tools`)
+Contains tools for helping create Figura models.
+
 &nbsp;
 # Using my work
 If you plan to use this content in any way, I have a few requirements.  
