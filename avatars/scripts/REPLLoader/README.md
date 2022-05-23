@@ -1,16 +1,16 @@
 # Figura REPL
 ```yaml
 VERSION:   ​4.1.6​
-FILESIZE:  ​64.82KB​
-CACHESIZE: ​16.39KB​
-CHARS:     ​66248​
-LINES:     ​1592​
+FILESIZE:  ​0.83KB​
+CACHESIZE: ​0.51KB​
+CHARS:     ​849​
+LINES:     ​20​
 ```
 
 Adds an interactive and extensive REPL to Figura.  
 Supports all native types (including Figura's `vector` type.)
 
-***THIS SCRIPT WILL LIKELY CAUSE YOUR AVATAR TO FAIL FOR OTHER PLAYERS WHEN `FORMAT SCRIPT` IS ENABLED. EITHER SWAP TO THE REPL LOADER OR TURN OFF SCRIPT FORMATTING BEFORE UPLOADING.***
+*This version uses a JSON Data Loader to run the REPL while only taking up 20 lines of actual script space.*
 
 Press <kbd>̃˴</kbd> to toggle the REPL.  
 To input something into the REPL, start typing in chat and press <kbd>ENTER</kbd> to submit.
