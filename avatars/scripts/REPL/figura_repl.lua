@@ -3,7 +3,7 @@ if client.isHost() then
   --[[>======================================<< INFO >>======================================<[]--
       FIGURA REPL
       By: GrandpaScout [STEAM_1:0:55009667]
-      Version: 4.1.6
+      Version: 4.2.0
       Compatibility: >= Figura 0.0.8
       Description:
         A REPL for use in Figura 0.0.8 or later.
@@ -1530,9 +1530,23 @@ if client.isHost() then
     [REPLINSTANCE_ItemStack["figura$item_stack"]] = false
   }
 
-  setmetatable(REPL, REPLmt)
+  function REPL.tick()
+    local REPLkeyIP = REPL.key.isPressed()
+    if REPLkeyIP and not REPL.keyWP then
+      if REPL.bound then
+        REPL.bound = false
+        chat.setFiguraCommandPrefix()
+        log(string.format('{"text":"REPL: Unbound from chat.","color":"%s","italic":false}', rtr.notice), true)
+      else
+        REPL.bound = true
+        chat.setFiguraCommandPrefix("")
+        log(string.format('{"text":"REPL: Bound to chat.","color":"%s","italic":false}', rtr.notice), true)
+      end
+    end
+    REPL.keyWP = REPLkeyIP
+  end
 
-  onCommand = function(cmd)
+  function REPL.onCommand(cmd)
     if REPL.bound then
       local s, e = pcall(REPLmt.__call, nil, cmd)
       if not s then
@@ -1556,21 +1570,10 @@ if client.isHost() then
     end
   end
 
-  function tick()
-    local REPLkeyIP = REPL.key.isPressed()
-    if REPLkeyIP and not REPL.keyWP then
-      if REPL.bound then
-        REPL.bound = false
-        chat.setFiguraCommandPrefix()
-        log(string.format('{"text":"REPL: Unbound from chat.","color":"%s","italic":false}', rtr.notice), true)
-      else
-        REPL.bound = true
-        chat.setFiguraCommandPrefix("")
-        log(string.format('{"text":"REPL: Bound to chat.","color":"%s","italic":false}', rtr.notice), true)
-      end
-    end
-    REPL.keyWP = REPLkeyIP
-  end
+  setmetatable(REPL, REPLmt)
+
+  function onCommand(cmd) REPL.onCommand(cmd) end
+  function tick() REPL.tick() end
 end
 
 function ping.REPLSync(ccmd)
