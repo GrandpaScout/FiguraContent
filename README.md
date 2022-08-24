@@ -1,3 +1,8 @@
+# **THIS IS MARKED AS READ-ONLY DUE TO FIGURA 0.0.8 BEING OBSOLETE**
+### You can still use the content here, just know that it won't be updated until 0.1.0 releases fully.
+
+***
+
 # GrandpaScout's Figura Content
 This repository contains all of my pubic Figura content.  
 It may include models, scripts, libraries, and whatever else.
